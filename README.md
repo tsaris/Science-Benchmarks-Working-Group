@@ -2,8 +2,8 @@
 The working group’s goal is to assemble and distribute scientific data sets relevant to a scientific campaign in a systematic manner, and pose quantifiable targets (“science benchmark”). A benchmark involves (i) a data set, (ii) objective criteria to meet, and (iii) a reference implementation. The objective criteria depends on the scientific problem at hand. The metric should be well defined on the data but could come from a diverse set of measures (one or more of: accuracy targets, top-1 or 5% error, time to convergence, cross-validation rates, confusion matrices, type-1/type-2 error rates, inference times, surrogate accuracy, control stability measure, etc.).
 
 ## Benchmarks
-1) <h3>CloudMask</h3>
-2) <h3>STEMDL</h3>
+1. CloudMask
+2. STEMDL
 
 State of the art scanning transmission electron microscopes (STEM) produce focused electron beams with atomic dimensions and allow to capture diffraction patterns arising from the interaction of incident electrons with nanoscale material volumes. Backing out the local atomic structure of said materials requires compute- and time-intensive analyses of these diffraction patterns (known as convergent beam electron diffraction, CBED). Traditional analyses of CBED requires iterative numerical solutions of partial differential equations and comparison with experimental data to refine the starting material configuration. This process is repeated anew for every newly acquired experimental CBED pattern and/or probed material. 
 
@@ -13,7 +13,7 @@ A [data](https://doi.ccs.ornl.gov/ui/doi/70) sample from this data set is given 
 
 This benchmark consists of 2 tasks: classification for crystal space groups and reconstruction for local electron density, the baseline implementation of which are provided in [[4]](https://link.springer.com/chapter/10.1007%2F978-3-030-63393-6_30) and [[5]](https://arxiv.org/abs/1909.11150).
 
-3) <h3>CANDLE-UNO</h3> 
+3. CANDLE-UNO
 
 ## Reference Implementation: 
 The reference implementation is primarily to demonstrate feasibility, show how the data is represented, help address any interpretation considerations, and potentially trigger initial ideas on how the benchmark can be improved.
