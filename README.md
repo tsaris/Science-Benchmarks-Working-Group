@@ -2,8 +2,13 @@
 The working group’s goal is to assemble and distribute scientific data sets relevant to a scientific campaign in a systematic manner, and pose quantifiable targets (“science benchmark”). A benchmark involves (i) a data set, (ii) objective criteria to meet, and (iii) a reference implementation. The objective criteria depends on the scientific problem at hand. The metric should be well defined on the data but could come from a diverse set of measures (one or more of: accuracy targets, top-1 or 5% error, time to convergence, cross-validation rates, confusion matrices, type-1/type-2 error rates, inference times, surrogate accuracy, control stability measure, etc.).
 
 # Benchmarks
-### CloudMask
-### STEMDL
+### CloudMask (Segmentation)
+
+Estimation of sea surface temperature (SST) from space-borne sensors, such as satellites, is crucial for a number of applications in environmental sciences. One of the aspects that underpins the derivation of SST is cloud screening, which is a step that marks each and every pixel of thousands of satellite imageries as containing cloud or clear sky, historically performed using either thresholding or Bayesian methods.
+
+This benchmark focuses on using a machine learning-based model for masking clouds, in the Sentinel-3 satellite, which carries the Sea and Land Surface Temperature Radiometer (SLSTR) instrument. More specifically, the benchmark operates on multispectral image data. The baseline implementation is a variation of the U-Net deep neural network. The benchmark includes two datasets of DS1-Cloud and DS2-Cloud, with sizes of 180GB and 4.9TB, respectively. Each dataset is made up of two parts: reflectance and brightness temperature. The reflectance is captured across six channels with the resolution of 2400 x 3000 pixels, and the brightness temperature is captured across three channels with the resolution of 1200 x 1500 pixels.
+
+### STEMDL (Classification)
 
 State of the art scanning transmission electron microscopes (STEM) produce focused electron beams with atomic dimensions and allow to capture diffraction patterns arising from the interaction of incident electrons with nanoscale material volumes. Backing out the local atomic structure of said materials requires compute- and time-intensive analyses of these diffraction patterns (known as convergent beam electron diffraction, CBED). Traditional analyses of CBED requires iterative numerical solutions of partial differential equations and comparison with experimental data to refine the starting material configuration. This process is repeated anew for every newly acquired experimental CBED pattern and/or probed material. 
 
