@@ -1,5 +1,26 @@
 # Overview and objective: 
+Encourage and support the curation of large-scale experimental and scientific datasets and the engineering of ML benchmarks operating on those datasets. The WG will engage with scientists, academics, national laboratories, such as synchrotrons, in securing, engineering, curating, and publishing datasets and machine learning benchmarks that operate on experimental scientific datasets. This will entail working across different domains of sciences, including material, life, environmental, and earth sciences, particle physics, and astronomy, to mention a few. We will include traditional observational and computer-generated data.
+
+Although scientific data is widespread, curating, maintaining, and distributing large-scale, useful datasets for public consumption is a challenging process, covering various aspects of data (from FAIR principles to distribution to versioning). With large data products, various ML techniques have to be evaluated against different architectures and different datasets. Without these benchmarking efforts, the community has no clear pathway for utilizing these advanced models. We expect that the collection will have significant tutorial value as examples from one field, and one observational or computational experiment can be modified to advance other fields and experiments.
+
 The working group’s goal is to assemble and distribute scientific data sets relevant to a scientific campaign in a systematic manner, and pose quantifiable targets (“science benchmark”). A benchmark involves (i) a data set, (ii) objective criteria to meet, and (iii) a reference implementation. The objective criteria depends on the scientific problem at hand. The metric should be well defined on the data but could come from a diverse set of measures (one or more of: accuracy targets, top-1 or 5% error, time to convergence, cross-validation rates, confusion matrices, type-1/type-2 error rates, inference times, surrogate accuracy, control stability measure, etc.).
+
+
+# Meeting Schedule: 
+Bi-weekly on Wednesay from 8:00-9:00AM Pacific.
+
+# Mailing List:
+[science@googlegroups.com](science@googlegroups.com)
+
+# Working Group Resources:
+[Google Drive](https://drive.google.com/drive/u/4/folders/19FK3PXa9DVIe9j7FawwihCb47F0V_nlC)
+
+# Working Group Chair:
+Geoffrey Fox ([gcfexchange@gmail.com](gcfexchange@gmail.com)) [CV](https://luddy.indiana.edu/contact/profile/?profile_id=203)
+
+Tony Hey ([tony.hey@stfc.ac.uk](tony.hey@stfc.ac.uk)) [CV](https://www.scd.stfc.ac.uk/Pages/Tony-Hey.aspx)
+
+Jeyan Thiyagalingam ([t.jeyan@stfc.ac.uk](t.jeyan@stfc.ac.uk)) [CV](https://www.scd.stfc.ac.uk/Pages/sciml-profile-jeyan.aspx)
 
 # Benchmarks
 ### CloudMask (Segmentation)
@@ -25,6 +46,15 @@ CANDLE (Exascale Deep Learning and Simulation Enabled Precision Medicine for Can
 Pilot1 (P1) benchmarks are formed out of problems and data at the cellular level. The high level goal of the problem behind the P1 benchmarks is to predict drug response based on molecular features of tumor cells and drug descriptors. Pilot2 (P2) benchmarks are formed out of problems and data at the molecular level. The high level goal of the problem behind the P2 benchmarks is molecular dynamic simulations of proteins involved in cancer, specifically the RAS protein. Pilot3 (P3) benchmarks are formed out of problems and data at the population level. The high level goal of the problem behind the P3 benchmarks is to predict cancer recurrence in patients based on patient related data.
 
 Uno application from Pilot1 (P1):  The goal of Uno is to predict tumor response to single and paired drugs, based on molecular features of tumor cells across multiple data sources. Combined dose response data contains sources: [‘CCLE’ ‘CTRP’ ‘gCSI’ ‘GDSC’ ‘NCI60’ ‘SCL’ ‘SCLC’ ‘ALMANAC.FG’ ‘ALMANAC.FF’ ‘ALMANAC.1A’]. Uno implements a deep learning architecture with 21M parameters in TensorFlow framework in Python. The code is publicly available on [GitHub](https://github.com/ECP-CANDLE/Benchmarks/tree/develop/Pilot1/Uno). The script in this repository downloads all required datasets. The primary metric to evaluate this applications is throughput (samples per second).  More details on running Uno can be found [here](https://github.com/ECP-CANDLE/Benchmarks/blob/develop/Pilot1/Uno/README.AUC.md).
+
+### TEvolOp Earthquake Forecasting
+
+Time series are seen in many scientific problems and many of them are geospatial -- functions of space and time and this benchmark illustrates this type. Some time series have a clear spatial structure that for example strongly relates nearby space points. The problem chosen is termed a spatial bag where there is spatial variation but it is not clearly linked to the geometric distance between spatial regions. In contrast, traffic-related time series have a strong spatial structure. We intend benchmarks that cover a broad range of problem types.
+
+The earthquake data comes from USGS and we have chosen a 4 degrees of Latitude (32 to 36 N) and 6 degrees of Longitude (-120 to -114) region covering Southern California. The data runs from 1950 to the present day and is presented as events: magnitude, ground location, depth, and time. We have divided the data into time and space bins. The time interval is daily but in our reference models, we accumulate this into fortnightly data. Southern California is divided into a 40 by 60 grid of 0.1 by 0.1-degree “pixels” which corresponds roughly to squares with an 11 km side, The dataset also includes an assignment of pixels to known faults and a list of the largest earthquakes in that region from 1950 until today. We have chosen various samplings of the dataset to provide both input and predicted values. These include time ranges from a fortnight up to 4 years. Further, we calculate summed magnitudes and depths and counts of significant quakes (magnitude > 3.29). Other easily available quantities are powers of quake energy (using Energy ~ 101.5m where m is magnitude). Quantities are “Energy averaged” when there are multiple events in a single space-time bin except for simple event counts. 
+
+Current reference models are a basic LSTM recurrent neural network and a modification of the original science transformer. Details can be found at https://docs.google.com/presentation/d/1ykYnX0uvxPE-M-c-Tau8irU3IqYuvj8Ws8iUqd5RCxQ/edit?usp=sharing, and https://www.researchgate.net/publication/346012611_DRAFT_Deep_Learning_for_Spatial_Time_Series 
+
 
 # Reference Implementation: 
 The reference implementation is primarily to demonstrate feasibility, show how the data is represented, help address any interpretation considerations, and potentially trigger initial ideas on how the benchmark can be improved.
