@@ -26,10 +26,10 @@ Jeyan Thiyagalingam ([t.jeyan@stfc.ac.uk](t.jeyan@stfc.ac.uk)) [CV](https://www.
 
 | Benchmark  | Science | Task | Owner Institute | Specific Benchmark Targets |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
-| CloudMask  | Climate | Segmentation | RAL | [link specifis cloudmask](#cloudmask-specific-benchmark-targets) |
-| STEMDL  | Material | Classification | ORNL |  [link specifis stemdl](#stemdl-specific-benchmark-targets) |
-| CANDLE-UNO  | Medicine | Classification | ANL | [link specifis candle-uno](#candle-uno-specific-benchmark-targets) |
-| TEvolOp Forecasting  | Earthquake | Regression | Indiana |  [link specifis tevolop](#tevolop-specific-benchmark-targets) |
+| CloudMask  | Climate | Segmentation | RAL | [link cloudmask specifics](#cloudmask-specific-benchmark-targets) |
+| STEMDL  | Material | Classification | ORNL |  [link stemdl specifics](#stemdl-specific-benchmark-targets) |
+| CANDLE-UNO  | Medicine | Classification | ANL | [link candle-uno specifics](#candle-uno-specific-benchmark-targets) |
+| TEvolOp Forecasting  | Earthquake | Regression | Indiana |  [link tevolop specifics](#tevolop-specific-benchmark-targets) |
 
 
 ### CloudMask (Segmentation)
