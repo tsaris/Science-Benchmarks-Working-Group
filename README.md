@@ -73,14 +73,14 @@ This benchmark consists of 2 tasks: classification for crystal space groups and 
    * Formula: F1 score on validation data
    * Score: 0.9 considered converged
 2. Data
-   * Download: https://doi.ccs.ornl.gov/ui/doi/70
+   * Download: [https://doi.ccs.ornl.gov/ui/doi/70](https://doi.ccs.ornl.gov/ui/doi/70)
    * Input Size: (128, 128, 3)
    * Training samples: 138.7K
    * Validation samples: 48.4
 3. Baseline implementation
    * Model: ResNet-50
-   * Reference Code: https://github.com/at-aaims/stemdl-benchmark
-   * Run Instructions: https://github.com/at-aaims/stemdl-benchmark#quickstart
+   * Reference Code: [https://github.com/at-aaims/stemdl-benchmark](https://github.com/at-aaims/stemdl-benchmark)
+   * Run Instructions: [https://github.com/at-aaims/stemdl-benchmark#quickstart](https://github.com/at-aaims/stemdl-benchmark#quickstart)
 4. Hardware systems explored and performance:
    * Summit: 40min with ResNet50 on 60 V100 GPUs
    * ThetaGPU:
