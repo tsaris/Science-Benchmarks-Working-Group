@@ -27,11 +27,10 @@ Jeyan Thiyagalingam ([t.jeyan@stfc.ac.uk](t.jeyan@stfc.ac.uk)) [CV](https://www.
 | Benchmark  | Science | Task | Specific Benchmark Targets |
 | ------------- | ------------- | ------------- | ------------- |
 | CloudMask  | Climate | Segmentation | ... |
-| STEMDL  | Material | Classification | [Custom foo description](#STEMDL) |
+| STEMDL  | Material | Classification | [link specifis stemdl](#specific-benchmark-targets) |
 | CANDLE-UNO  | Medicine | Classification | ... |
 | TEvolOp Forecasting  | Earthquake | Regression |  ... |
 
-[Custom foo description](#stemdl)
 
 ### CloudMask (Segmentation)
 
