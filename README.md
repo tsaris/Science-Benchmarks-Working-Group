@@ -24,14 +24,6 @@ Jeyan Thiyagalingam ([t.jeyan@stfc.ac.uk](t.jeyan@stfc.ac.uk)) [CV](https://www.
 
 # Benchmarks
 
-| Benchmark  | Science <br /> &<br /> Task | Scientific Objective | Datasets <br />& <br /> Reference implementation |  Hardware systems explored so far with performance achieved |
-| ------------- | ------------- | ------------- | ------------- | ------------- |
-| CloudMask  | Climate <br /> <br /> Segmentation | (MISSING) | (MISSING) | (MISSING) |
-| STEMDL  | Material <br /> <br /> Classification | Due to the intrinsic imbalance of the crystal space group distribution in nature, the classes in the dataset are also imbalanced. We use F1 score (Macro) to measure the model performance and a value of 0.9 is considered converged (although more study in the scientific baseline is needed). For this metric, time-to-solution for training a converged model is of interest. Considering the application of the pre-trained model at the edge, other  metrics of interest are the model size and inference time. Generally, for the same convergence criteria as above, the smaller the model size, the better. | https://doi.ccs.ornl.gov/ui/doi/70 <br /> <br /> https://github.com/at-aaims/stemdl-benchmark | Summit: time-to-solution is ~40min with ResNet50 on 60 V100 GPUs. <br />  <br /> ThetaGPU: |
-| CANDLE-UNO  | Medicine <br /> <br /> Classification | (MISSING) | The script in this repository downloads all required datasets <br /> <br /> https://github.com/ECP-CANDLE/Benchmarks/tree/develop/Pilot1/Uno | (MISSING) |
-| TEvolOp Forecasting  | Earthquake <br /> <br /> Regression | (MISSING) | (MISSING) | (MISSING) |
-
-
 ### CloudMask (Segmentation)
 
 Estimation of sea surface temperature (SST) from space-borne sensors, such as satellites, is crucial for a number of applications in environmental sciences. One of the aspects that underpins the derivation of SST is cloud screening, which is a step that marks each and every pixel of thousands of satellite imageries as containing cloud or clear sky, historically performed using either thresholding or Bayesian methods.
@@ -47,6 +39,26 @@ In this [benchmark](https://github.com/at-aaims/stemdl-benchmark), we used newly
 A [data](https://doi.ccs.ornl.gov/ui/doi/70) sample from this data set is given by a 3-d array formed by stacking various CBED patterns simulated from the same material at different distinct material projections (i.e. crystallographic orientations). Each CBED pattern is a 2-d array with float 32-bit image intensities. Associated with each data sample in the data set is a host of material attributes or properties which are, in principle, retrievable via analysis of this CBED stack. Of note are (1) 200 crystal space groups out of 230 unique mathematical discrete space groups and (2) local electron density which governs material’s property. 
 
 This benchmark consists of 2 tasks: classification for crystal space groups and reconstruction for local electron density, the baseline implementation of which are provided in [[4]](https://link.springer.com/chapter/10.1007%2F978-3-030-63393-6_30) and [[5]](https://arxiv.org/abs/1909.11150).
+
+#### Specific Benchmark Targets:
+1. Scientific objective(s):
+   * Formula: F1 score on validation data
+   * Score: 0.9 considered converged
+2. Data
+   * Download: https://doi.ccs.ornl.gov/ui/doi/70
+   * Input Size: (128, 128, 3)
+   * Training samples: 138.7K
+   * Validation samples: 48.4
+3. Baseline implementation
+   * Model: ResNet-50
+   * Reference Code: https://github.com/at-aaims/stemdl-benchmark
+   * Run Instructions: https://github.com/at-aaims/stemdl-benchmark#quickstart
+4. Hardware systems explored and performance:
+   * Summit: 40min with ResNet50 on 60 V100 GPUs
+5. Example improvements:
+   * Variation of ResNet pre-trained models
+
+
 
 ### CANDLE-UNO
 
