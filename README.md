@@ -24,12 +24,12 @@ Jeyan Thiyagalingam ([t.jeyan@stfc.ac.uk](t.jeyan@stfc.ac.uk)) [CV](https://www.
 
 # Benchmarks
 
-| Benchmark  | Science | Task | Specific Benchmark Targets |
-| ------------- | ------------- | ------------- | ------------- |
-| CloudMask  | Climate | Segmentation | ... |
-| STEMDL  | Material | Classification | [link specifis stemdl](#specific-benchmark-targets) |
-| CANDLE-UNO  | Medicine | Classification | ... |
-| TEvolOp Forecasting  | Earthquake | Regression |  ... |
+| Benchmark  | Science | Task | Owner Institute | Specific Benchmark Targets |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| CloudMask  | Climate | Segmentation | RAL | [link specifis cloudmask](#cloudmask-specific-benchmark-targets) |
+| STEMDL  | Material | Classification | ORNL |  [link specifis stemdl](#stemdl-specific-benchmark-targets) |
+| CANDLE-UNO  | Medicine | Classification | ANL | [link specifis candle-uno](#candle-uno-specific-benchmark-targets) |
+| TEvolOp Forecasting  | Earthquake | Regression | Indiana |  [link specifis tevolop](#tevolop-specific-benchmark-targets) |
 
 
 ### CloudMask (Segmentation)
@@ -37,6 +37,26 @@ Jeyan Thiyagalingam ([t.jeyan@stfc.ac.uk](t.jeyan@stfc.ac.uk)) [CV](https://www.
 Estimation of sea surface temperature (SST) from space-borne sensors, such as satellites, is crucial for a number of applications in environmental sciences. One of the aspects that underpins the derivation of SST is cloud screening, which is a step that marks each and every pixel of thousands of satellite imageries as containing cloud or clear sky, historically performed using either thresholding or Bayesian methods.
 
 This benchmark focuses on using a machine learning-based model for masking clouds, in the Sentinel-3 satellite, which carries the Sea and Land Surface Temperature Radiometer (SLSTR) instrument. More specifically, the benchmark operates on multispectral image data. The baseline implementation is a variation of the U-Net deep neural network. The benchmark includes two datasets of DS1-Cloud and DS2-Cloud, with sizes of 180GB and 4.9TB, respectively. Each dataset is made up of two parts: reflectance and brightness temperature. The reflectance is captured across six channels with the resolution of 2400 x 3000 pixels, and the brightness temperature is captured across three channels with the resolution of 1200 x 1500 pixels.
+
+#### CloudMask Specific Benchmark Targets:
+1. Scientific objective(s):
+   * Formula: 
+   * Score:
+2. Data
+   * Download:
+   * Input Size:
+   * Training samples:
+   * Validation samples:
+3. Baseline implementation
+   * Model: 
+   * Reference Code: 
+   * Run Instructions: 
+4. Hardware systems explored and performance:
+   * Summit:
+   * ThetaGPU:
+   * RAL: 
+5. Example improvements:
+   * ...
 
 ### STEMDL (Classification)
 
@@ -48,9 +68,7 @@ A [data](https://doi.ccs.ornl.gov/ui/doi/70) sample from this data set is given 
 
 This benchmark consists of 2 tasks: classification for crystal space groups and reconstruction for local electron density, the baseline implementation of which are provided in [[4]](https://link.springer.com/chapter/10.1007%2F978-3-030-63393-6_30) and [[5]](https://arxiv.org/abs/1909.11150).
 
-# STEMDL
-
-#### Specific Benchmark Targets:
+#### STEMDL Specific Benchmark Targets:
 1. Scientific objective(s):
    * Formula: F1 score on validation data
    * Score: 0.9 considered converged
@@ -65,6 +83,8 @@ This benchmark consists of 2 tasks: classification for crystal space groups and 
    * Run Instructions: https://github.com/at-aaims/stemdl-benchmark#quickstart
 4. Hardware systems explored and performance:
    * Summit: 40min with ResNet50 on 60 V100 GPUs
+   * ThetaGPU:
+   * RAL: 
 5. Example improvements:
    * Variation of ResNet pre-trained models
 
@@ -78,11 +98,51 @@ Pilot1 (P1) benchmarks are formed out of problems and data at the cellular level
 
 Uno application from Pilot1 (P1):  The goal of Uno is to predict tumor response to single and paired drugs, based on molecular features of tumor cells across multiple data sources. Combined dose response data contains sources: [‘CCLE’ ‘CTRP’ ‘gCSI’ ‘GDSC’ ‘NCI60’ ‘SCL’ ‘SCLC’ ‘ALMANAC.FG’ ‘ALMANAC.FF’ ‘ALMANAC.1A’]. Uno implements a deep learning architecture with 21M parameters in TensorFlow framework in Python. The code is publicly available on [GitHub](https://github.com/ECP-CANDLE/Benchmarks/tree/develop/Pilot1/Uno). The script in this repository downloads all required datasets. The primary metric to evaluate this applications is throughput (samples per second).  More details on running Uno can be found [here](https://github.com/ECP-CANDLE/Benchmarks/blob/develop/Pilot1/Uno/README.AUC.md).
 
+#### CANDLE-UNO Specific Benchmark Targets:
+1. Scientific objective(s):
+   * Formula: 
+   * Score:
+2. Data
+   * Download:
+   * Input Size:
+   * Training samples:
+   * Validation samples:
+3. Baseline implementation
+   * Model: 
+   * Reference Code: 
+   * Run Instructions: 
+4. Hardware systems explored and performance:
+   * Summit:
+   * ThetaGPU:
+   * RAL: 
+5. Example improvements:
+   * ...
+
 ### TEvolOp Earthquake Forecasting
 
 Time series are seen in many scientific problems and many of them are geospatial -- functions of space and time and this benchmark illustrates this type. Some time series have a clear spatial structure that for example strongly relates nearby space points. The problem chosen is termed a spatial bag where there is spatial variation but it is not clearly linked to the geometric distance between spatial regions. In contrast, traffic-related time series have a strong spatial structure. We intend benchmarks that cover a broad range of problem types.
 
 The earthquake data comes from USGS and we have chosen a 4 degrees of Latitude (32 to 36 N) and 6 degrees of Longitude (-120 to -114) region covering Southern California. The data runs from 1950 to the present day and is presented as events: magnitude, ground location, depth, and time. We have divided the data into time and space bins. The time interval is daily but in our reference models, we accumulate this into fortnightly data. Southern California is divided into a 40 by 60 grid of 0.1 by 0.1-degree “pixels” which corresponds roughly to squares with an 11 km side, The dataset also includes an assignment of pixels to known faults and a list of the largest earthquakes in that region from 1950 until today. We have chosen various samplings of the dataset to provide both input and predicted values. These include time ranges from a fortnight up to 4 years. Further, we calculate summed magnitudes and depths and counts of significant quakes (magnitude > 3.29). Other easily available quantities are powers of quake energy (using Energy ~ 101.5m where m is magnitude). Quantities are “Energy averaged” when there are multiple events in a single space-time bin except for simple event counts. 
+
+#### TEvolOp Specific Benchmark Targets:
+1. Scientific objective(s):
+   * Formula: 
+   * Score:
+2. Data
+   * Download:
+   * Input Size:
+   * Training samples:
+   * Validation samples:
+3. Baseline implementation
+   * Model: 
+   * Reference Code: 
+   * Run Instructions: 
+4. Hardware systems explored and performance:
+   * Summit:
+   * ThetaGPU:
+   * RAL: 
+5. Example improvements:
+   * ...
 
 Current reference models are a basic LSTM recurrent neural network and a modification of the original science transformer. Details can be found at [https://docs.google.com/presentation/d/1ykYnX0uvxPE-M-c-Tau8irU3IqYuvj8Ws8iUqd5RCxQ/edit?usp=sharing](https://docs.google.com/presentation/d/1ykYnX0uvxPE-M-c-Tau8irU3IqYuvj8Ws8iUqd5RCxQ/edit?usp=sharing), and [https://www.researchgate.net/publication/346012611_DRAFT_Deep_Learning_for_Spatial_Time_Series](https://www.researchgate.net/publication/346012611_DRAFT_Deep_Learning_for_Spatial_Time_Series)
 
