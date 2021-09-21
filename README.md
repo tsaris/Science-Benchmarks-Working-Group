@@ -24,6 +24,15 @@ Jeyan Thiyagalingam ([t.jeyan@stfc.ac.uk](t.jeyan@stfc.ac.uk)) [CV](https://www.
 
 # Benchmarks
 
+| Benchmark  | Science | Task | Specific Benchmark Targets |
+| ------------- | ------------- | ------------- | ------------- |
+| CloudMask  | Climate | Segmentation | ... |
+| STEMDL  | Material | Classification | [Custom foo description](#STEMDL) |
+| CANDLE-UNO  | Medicine | Classification | ... |
+| TEvolOp Forecasting  | Earthquake | Regression |  ... |
+
+[Custom foo description](#stemdl)
+
 ### CloudMask (Segmentation)
 
 Estimation of sea surface temperature (SST) from space-borne sensors, such as satellites, is crucial for a number of applications in environmental sciences. One of the aspects that underpins the derivation of SST is cloud screening, which is a step that marks each and every pixel of thousands of satellite imageries as containing cloud or clear sky, historically performed using either thresholding or Bayesian methods.
@@ -39,6 +48,8 @@ In this [benchmark](https://github.com/at-aaims/stemdl-benchmark), we used newly
 A [data](https://doi.ccs.ornl.gov/ui/doi/70) sample from this data set is given by a 3-d array formed by stacking various CBED patterns simulated from the same material at different distinct material projections (i.e. crystallographic orientations). Each CBED pattern is a 2-d array with float 32-bit image intensities. Associated with each data sample in the data set is a host of material attributes or properties which are, in principle, retrievable via analysis of this CBED stack. Of note are (1) 200 crystal space groups out of 230 unique mathematical discrete space groups and (2) local electron density which governs material’s property. 
 
 This benchmark consists of 2 tasks: classification for crystal space groups and reconstruction for local electron density, the baseline implementation of which are provided in [[4]](https://link.springer.com/chapter/10.1007%2F978-3-030-63393-6_30) and [[5]](https://arxiv.org/abs/1909.11150).
+
+# STEMDL
 
 #### Specific Benchmark Targets:
 1. Scientific objective(s):
