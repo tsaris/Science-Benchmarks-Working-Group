@@ -24,12 +24,12 @@ Jeyan Thiyagalingam ([t.jeyan@stfc.ac.uk](t.jeyan@stfc.ac.uk)) [CV](https://www.
 
 # Benchmarks
 
-| Benchmarks  | Tasks | Science | Scientific Objective | Datasets | Reference implementation | Hardware systems explored so far with performance achieved |
-| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-| CloudMask  | Segmentation  | Climate | ... | ... | ... | ... |
-| STEMDL  | Classification  | Material | Due to the intrinsic imbalance of the crystal space group distribution in nature, the classes in the dataset are also imbalanced. We use F1 score (Macro) to measure the model performance and a value of 0.9 is considered converged (although more study in the scientific baseline is needed). For this metric, time-to-solution for training a converged model is of interest.Considering the application of the pre-trained model at the edge, other  metrics of interest are the model size and inference time. Generally, for the same convergence criteria as above, the smaller the model size, the better. | https://doi.ccs.ornl.gov/ui/doi/70 | https://github.com/at-aaims/stemdl-benchmark | Summit: time-to-solution is ~40min with ResNet50 on 60 V100 GPUs. ThetaGPU:
-| CANDLE-UNO  | Classification  | Medicine | ... | ... | ... | ... |
-| TEvolOp Forecasting  | Regression  | Earthquake | ... | ... | ... | ... |
+| Benchmark  | Science <br /> &<br /> Task | Scientific Objective | Datasets <br />& <br /> Reference implementation |  Hardware systems explored so far with performance achieved |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| CloudMask  | Climate <br /> <br /> Segmentation | (MISSING) | (MISSING) | (MISSING) |
+| STEMDL  | Material <br /> <br /> Classification | Due to the intrinsic imbalance of the crystal space group distribution in nature, the classes in the dataset are also imbalanced. We use F1 score (Macro) to measure the model performance and a value of 0.9 is considered converged (although more study in the scientific baseline is needed). For this metric, time-to-solution for training a converged model is of interest. Considering the application of the pre-trained model at the edge, other  metrics of interest are the model size and inference time. Generally, for the same convergence criteria as above, the smaller the model size, the better. | https://doi.ccs.ornl.gov/ui/doi/70 <br /> <br /> https://github.com/at-aaims/stemdl-benchmark | Summit: time-to-solution is ~40min with ResNet50 on 60 V100 GPUs. <br />  <br /> ThetaGPU: |
+| CANDLE-UNO  | Medicine <br /> <br /> Classification | (MISSING) | The script in this repository downloads all required datasets <br /> <br /> https://github.com/ECP-CANDLE/Benchmarks/tree/develop/Pilot1/Uno | (MISSING) |
+| TEvolOp Forecasting  | Earthquake <br /> <br /> Regression | (MISSING) | https://doi.ccs.ornl.gov/ui/doi/70 <br /> <br /> https://github.com/at-aaims/stemdl-benchmark | (MISSING) |
 
 
 ### CloudMask (Segmentation)
