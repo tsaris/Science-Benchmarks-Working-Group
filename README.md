@@ -23,6 +23,15 @@ Tony Hey ([tony.hey@stfc.ac.uk](tony.hey@stfc.ac.uk)) [CV](https://www.scd.stfc.
 Jeyan Thiyagalingam ([t.jeyan@stfc.ac.uk](t.jeyan@stfc.ac.uk)) [CV](https://www.scd.stfc.ac.uk/Pages/sciml-profile-jeyan.aspx)
 
 # Benchmarks
+
+| Benchmark  | Task | Science | Target Accuracy
+| ------------- | ------------- | ------------- | ------------- |
+| CloudMask  | Segmentation  | Climate | ... |
+| STEMDL  | Classification  | Material | ... |
+| CANDLE-UNO  | Classification  | Medicine | ... |
+| TEvolOp Forecasting  | Regression  | Earthquake | ... |
+
+
 ### CloudMask (Segmentation)
 
 Estimation of sea surface temperature (SST) from space-borne sensors, such as satellites, is crucial for a number of applications in environmental sciences. One of the aspects that underpins the derivation of SST is cloud screening, which is a step that marks each and every pixel of thousands of satellite imageries as containing cloud or clear sky, historically performed using either thresholding or Bayesian methods.
