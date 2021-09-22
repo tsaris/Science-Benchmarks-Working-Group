@@ -40,6 +40,7 @@ This benchmark focuses on using a machine learning-based model for masking cloud
 
 #### CloudMask Specific Benchmark Targets:
 1. Scientific objective(s):
+   * Objective: 
    * Formula: 
    * Score:
 2. Data
@@ -51,6 +52,7 @@ This benchmark focuses on using a machine learning-based model for masking cloud
    * Model: 
    * Reference Code: 
    * Run Instructions: 
+   * Time-to-solution:
 4. Hardware systems explored and performance:
    * Summit:
    * ThetaGPU:
@@ -70,6 +72,7 @@ This benchmark consists of 2 tasks: classification for crystal space groups and 
 
 #### STEMDL Specific Benchmark Targets:
 1. Scientific objective(s):
+   * Objective: Classification for crystal space groups
    * Formula: F1 score on validation data
    * Score: 0.9 considered converged
 2. Data
@@ -81,8 +84,9 @@ This benchmark consists of 2 tasks: classification for crystal space groups and 
    * Model: ResNet-50
    * Reference Code: [https://github.com/at-aaims/stemdl-benchmark](https://github.com/at-aaims/stemdl-benchmark)
    * Run Instructions: [https://github.com/at-aaims/stemdl-benchmark#quickstart](https://github.com/at-aaims/stemdl-benchmark#quickstart)
+   * Time-to-solution: 40min on 60 V100 GPUs
 4. Hardware systems explored and performance:
-   * Summit: 40min with ResNet50 on 60 V100 GPUs
+   * Summit:
    * ThetaGPU:
    * RAL: 
 5. Example improvements:
@@ -100,6 +104,7 @@ Uno application from Pilot1 (P1):  The goal of Uno is to predict tumor response 
 
 #### CANDLE-UNO Specific Benchmark Targets:
 1. Scientific objective(s):
+   * Objective: 
    * Formula: 
    * Score:
 2. Data
@@ -110,7 +115,8 @@ Uno application from Pilot1 (P1):  The goal of Uno is to predict tumor response 
 3. Baseline implementation
    * Model: 
    * Reference Code: 
-   * Run Instructions: 
+   * Run Instructions:
+   * Time-to-solution:
 4. Hardware systems explored and performance:
    * Summit:
    * ThetaGPU:
@@ -128,6 +134,7 @@ Current reference models are a basic LSTM recurrent neural network and a modific
 
 #### TEvolOp Specific Benchmark Targets:
 1. Scientific objective(s):
+   * Objective: 
    * Formula: 
    * Score:
 2. Data
@@ -139,6 +146,7 @@ Current reference models are a basic LSTM recurrent neural network and a modific
    * Model: 
    * Reference Code: 
    * Run Instructions: 
+   * Time-to-solution:
 4. Hardware systems explored and performance:
    * Summit:
    * ThetaGPU:
