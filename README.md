@@ -40,19 +40,19 @@ This benchmark focuses on using a machine learning-based model for masking cloud
 
 #### CloudMask Specific Benchmark Targets:
 1. Scientific objective(s):
-   * Objective: 
-   * Formula: 
-   * Score:
+   * Objective: Predictions of tumor response to drug treatments, based on molecular features of tumor cells and drug descriptors
+   * Formula: Validation loss
+   * Score: 0.0054
 2. Data
-   * Download:
-   * Input Size:
-   * Training samples:
-   * Validation samples:
+   * Download: http://ftp.mcs.anl.gov/pub/candle/public/benchmarks/Pilot1/uno/
+   * Input Size: 6.4G
+   * Training samples: 423952
+   * Validation samples: 52994
 3. Baseline implementation
-   * Model: 
-   * Reference Code: 
-   * Run Instructions: 
-   * Time-to-solution:
+   * Model: Multi-task Learning-based custom model
+   * Reference Code: https://github.com/ECP-CANDLE/Benchmarks/tree/develop/Pilot1/Uno
+   * Run Instructions: https://github.com/ECP-CANDLE/Benchmarks/blob/develop/Pilot1/Uno/README.AUC.md
+   * Time-to-solution: 10667 samples/sec (batch size 64) on single A100
 4. Hardware systems explored and performance:
    * Summit:
    * ThetaGPU:
