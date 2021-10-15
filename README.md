@@ -45,7 +45,7 @@ This benchmark focuses on using a machine learning-based model for masking cloud
    * Score: 0.9 for convergence
 2. Data
    * Download: aws s3 --no-sign-request --endpoint-url https://s3.echo.stfc.ac.uk sync s3://sciml-datasets/en/ cloud_slstr_ds1 .
-   * Input Size: 180GB
+   * Data Size: 180GB
    * Training samples: 15488
    * Validation samples: 3840
 3. Baseline implementation
@@ -77,7 +77,7 @@ This benchmark consists of 2 tasks: classification for crystal space groups and 
    * Score: 0.9 considered converged
 2. Data
    * Download: [https://doi.ccs.ornl.gov/ui/doi/70](https://doi.ccs.ornl.gov/ui/doi/70)
-   * Input Size: (128, 128, 3)
+   * Data Size: 548.7 GiB
    * Training samples: 138.7K
    * Validation samples: 48.4
 3. Baseline implementation
@@ -109,7 +109,7 @@ Uno application from Pilot1 (P1):  The goal of Uno is to predict tumor response 
    * Score: 0.0054
 2. Data
    * Download: http://ftp.mcs.anl.gov/pub/candle/public/benchmarks/Pilot1/uno/
-   * Input Size: 6.4G
+   * Data Size: 6.4G
    * Training samples: 423952
    * Validation samples: 52994
 3. Baseline implementation
@@ -135,11 +135,11 @@ Current reference models are a basic LSTM recurrent neural network and a modific
 #### TEvolOp Specific Benchmark Targets:
 1. Scientific objective(s):
    * Objective: Improve the quality of Earthquake forecasting
-   * Formula: 
+   * Formula: Nash–Sutcliffe model efficiency coefficient (NSE)
    * Score:
 2. Data
    * Download: https://drive.google.com/drive/folders/1wz7K2R4gc78fXLNZMHcaSVfQvIpIhNPi?usp=sharing
-   * Input Size:
+   * Data Size:
    * Training samples:
    * Validation samples:
 3. Baseline implementation
