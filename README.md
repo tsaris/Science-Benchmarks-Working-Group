@@ -40,25 +40,25 @@ This benchmark focuses on using a machine learning-based model for masking cloud
 
 #### CloudMask Specific Benchmark Targets:
 1. Scientific objective(s):
-   * Objective: Predictions of tumor response to drug treatments, based on molecular features of tumor cells and drug descriptors
-   * Formula: Validation loss
-   * Score: 0.0054
+   * Objective: Compare the accuracy produced by the Neural Network with the accuracy of a Bayesian method
+   * Formula: Weighted Binary Cross Entropy of validation dat
+   * Score: 0.9 for convergence
 2. Data
-   * Download: http://ftp.mcs.anl.gov/pub/candle/public/benchmarks/Pilot1/uno/
-   * Input Size: 6.4G
-   * Training samples: 423952
-   * Validation samples: 52994
+   * Download: aws s3 --no-sign-request --endpoint-url https://s3.echo.stfc.ac.uk sync s3://sciml-datasets/en/ cloud_slstr_ds1 .
+   * Input Size: 180GB
+   * Training samples: 15488
+   * Validation samples: 3840
 3. Baseline implementation
-   * Model: Multi-task Learning-based custom model
-   * Reference Code: https://github.com/ECP-CANDLE/Benchmarks/tree/develop/Pilot1/Uno
-   * Run Instructions: https://github.com/ECP-CANDLE/Benchmarks/blob/develop/Pilot1/Uno/README.AUC.md
-   * Time-to-solution: 10667 samples/sec (batch size 64) on single A100
+   * Model: U-Net
+   * Reference Code: https://github.com/stfc-sciml/sciml-bench/tree/master/sciml_bench/benchmarks/slstr_cloud
+   * Run Instructions: https://github.com/stfc-sciml/sciml-bench/blob/master/README.md
+   * Time-to-solution: 180GB dataset runs 59 min on DGX-2 with 32 V100 GPU
 4. Hardware systems explored and performance:
-   * Summit:
+   * Summit: 180 GB dataset runs 48 min on 32 GPU
    * ThetaGPU:
-   * RAL: 
+   * RAL: 180 GB dataset runs 59 min on DGX-2 with 32 V100 GPUs
 5. Example improvements:
-   * ...
+   * Investigate the use of unsupervised segmentation
 
 ### STEMDL (Classification)
 
@@ -104,19 +104,19 @@ Uno application from Pilot1 (P1):  The goal of Uno is to predict tumor response 
 
 #### CANDLE-UNO Specific Benchmark Targets:
 1. Scientific objective(s):
-   * Objective: 
-   * Formula: 
-   * Score:
+   * Objective: Predictions of tumor response to drug treatments, based on molecular features of tumor cells and drug descriptors
+   * Formula: Validation loss
+   * Score: 0.0054
 2. Data
-   * Download:
-   * Input Size:
-   * Training samples:
-   * Validation samples:
+   * Download: http://ftp.mcs.anl.gov/pub/candle/public/benchmarks/Pilot1/uno/
+   * Input Size: 6.4G
+   * Training samples: 423952
+   * Validation samples: 52994
 3. Baseline implementation
-   * Model: 
-   * Reference Code: 
-   * Run Instructions:
-   * Time-to-solution:
+   * Model: Multi-task Learning-based custom model
+   * Reference Code: https://github.com/ECP-CANDLE/Benchmarks/tree/develop/Pilot1/Uno
+   * Run Instructions: https://github.com/ECP-CANDLE/Benchmarks/blob/develop/Pilot1/Uno/README.AUC.md
+   * Time-to-solution: 10667 samples/sec (batch size 64) on single A100
 4. Hardware systems explored and performance:
    * Summit:
    * ThetaGPU:
@@ -134,11 +134,11 @@ Current reference models are a basic LSTM recurrent neural network and a modific
 
 #### TEvolOp Specific Benchmark Targets:
 1. Scientific objective(s):
-   * Objective: 
+   * Objective: Improve the quality of Earthquake forecasting
    * Formula: 
    * Score:
 2. Data
-   * Download:
+   * Download: https://drive.google.com/drive/folders/1wz7K2R4gc78fXLNZMHcaSVfQvIpIhNPi?usp=sharing
    * Input Size:
    * Training samples:
    * Validation samples:
