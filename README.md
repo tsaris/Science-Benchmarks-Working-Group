@@ -152,7 +152,8 @@ Current reference models are a basic LSTM recurrent neural network and a modific
    * ThetaGPU:
    * RAL: 
 5. Example improvements:
-   * ...
+   * LSTM
+   * Transformer
 
 # Reference Implementation: 
 The reference implementation is primarily to demonstrate feasibility, show how the data is represented, help address any interpretation considerations, and potentially trigger initial ideas on how the benchmark can be improved.
