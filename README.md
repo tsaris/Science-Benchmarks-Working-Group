@@ -134,26 +134,28 @@ Current reference models are a basic LSTM recurrent neural network and a modific
 
 #### TEvolOp Specific Benchmark Targets:
 1. Scientific objective(s):
-   * Objective: Improve the quality of Earthquake forecasting
-   * Formula: Nash–Sutcliffe model efficiency coefficient (NSE)
-   * Score:
+   * Objective:  Improve the quality of Earthquake forecasting by promoting new approaches to geospatial time series (accumulated earthquake magnitude in daily or 2-week samples over 70 years)
+   * Formula: Normalized Nash–Sutcliffe model efficiency coefficient (NNSE) which measures the discrepancy between prediction and measurement compared to the standard deviation of measurements over time. A visualization of forecast versus observed values is also used
+   * Score: The current models predict earthquake magnitudes (more precisely log total energy) over time intervals from 2 weeks to 4 years. The NNSE lies between 0.8 and 0.99 depending on model and predicted time series
 2. Data
-   * Download: https://drive.google.com/drive/folders/1wz7K2R4gc78fXLNZMHcaSVfQvIpIhNPi?usp=sharing
-   * Data Size:
-   * Training samples:
-   * Validation samples:
+   * Download: [https://drive.google.com/drive/folders/1wz7K2R4gc78fXLNZMHcaSVfQvIpIhNPi?usp=sharing](https://drive.google.com/drive/folders/1wz7K2R4gc78fXLNZMHcaSVfQvIpIhNPi?usp=sharing)
+   * Data Size: 5GB from USGS
+   * Training samples: Data is decided spatially in an 80%-20% fashion between training and validation. The full dataset covers 6 degrees of longitude (-114 to -120) and 4 degrees of latitude (32 to 56) In Southern California. This is divided into 2400 spatial bins 0.1 degree (~11km) on a side
+   * Validation samples: Most analyses use 500 most active bins of which 400 are training and 100 validation.
 3. Baseline implementation
-   * Model: 
-   * Reference Code: 
-   * Run Instructions: 
-   * Time-to-solution:
+   * Model: 3 state of the art geospatial deep learning implementations are provided
+   * Reference Code: [https://colab.research.google.com/drive/1JrPcRwX06xIN5iLhc53_MOLzU9q_Q7wD?usp=sharing](https://colab.research.google.com/drive/1JrPcRwX06xIN5iLhc53_MOLzU9q_Q7wD?usp=sharing) (Second model below)
+   * Run Instructions: This is set up currently as a Jupyter notebook to run on Colab/GitHub. A container DGX version is also available
+   * Time-to-solution: 1 to 2 days on a single GPU
 4. Hardware systems explored and performance:
    * Summit:
    * ThetaGPU:
    * RAL: 
+   * Currently only run on Google Colab and an A100 DGX 4 GPU workstation
 5. Example improvements:
-   * LSTM
-   * Transformer
+   * LSTM and single multi-period forecast at final time step
+   * Transformer looking at Spatial and Temporal attention  with a single LSTM Encoder and single multi-period forecast at final time step
+   * (Slightly enhanced) Google Temporal Fusion Transformer with  LSTM Decoder and Encoder and forecasting multiple time positions into future. Attention only in time
 
 # Reference Implementation: 
 The reference implementation is primarily to demonstrate feasibility, show how the data is represented, help address any interpretation considerations, and potentially trigger initial ideas on how the benchmark can be improved.
